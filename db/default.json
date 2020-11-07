@@ -1,0 +1,373 @@
+{
+	"cards": {
+		"action": [{
+			"title": "Wild Rent",
+			"description": "Force one player to pay you rent for properties you own in one of these colours",
+			"money": 3,
+			"qty": 3
+		}, {
+			"title": "Dark Blue-Green Wild Rent",
+			"description": "All players pay you rent for properties you own in one of these colours",
+			"money": 1,
+			"qty": 2
+		}, {
+			"title": "Light Blue-Brown Wild Rent",
+			"description": "All players pay you rent for properties you own in one of these colours",
+			"money": 1,
+			"qty": 2
+		}, {
+			"title": "Orange-Purple Wild Rent",
+			"description": "All players pay you rent for properties you own in one of these colours",
+			"money": 1,
+			"qty": 2
+		}, {
+			"title": "Black-White Wild Rent",
+			"description": "All players pay you rent for properties you own in one of these colours",
+			"money": 1,
+			"qty": 2
+		}, {
+			"title": "Yellow-Red Wild Rent",
+			"description": "All players pay you rent for properties you own in one of these colours",
+			"money": 1,
+			"qty": 2
+		}, {
+			"title": "Deal Breaker",
+			"description": "Steal a complete set of properties from any player",
+			"money": 5,
+			"qty": 2
+		}, {
+			"title": "Debt Collector",
+			"description": "Force any player to pay you $5M",
+			"money": 3,
+			"qty": 3
+		}, {
+			"title": "Double the Rent",
+			"description": "Needs to be played with a rent card",
+			"money": 1,
+			"qty": 2
+		}, {
+			"title": "Forced Deal",
+			"description": "Swap any property with another player (cannot be part of a full set)",
+			"money": 3,
+			"qty": 3
+		}, {
+			"title": "Hotel",
+			"description": "Add onto any full set you own to add $4M to the rent value (except stations and utilities)",
+			"money": 4,
+			"qty": 2
+		}, {
+			"title": "House",
+			"description": "Add onto any full set you own to add $3M to the rent value (except stations and utilities)",
+			"money": 3,
+			"qty": 3
+		}, {
+			"title": "It's my birthday",
+			"description": "All players give you $2M as a \"gift\"",
+			"money": 2,
+			"qty": 3
+		}, {
+			"title": "Just say no!",
+			"description": "Use any time when an action card is played against you",
+			"money": 4,
+			"qty": 3
+		}, {
+			"title": "Pass Go",
+			"description": "Draw 2 extra cards",
+			"money": 1,
+			"qty": 10
+		}, {
+			"title": "Sly Deal",
+			"description": "Steal a property from the player of your choice",
+			"money": 3,
+			"qty": 3
+		}],
+		"money": [{
+			"value": 10,
+			"qty": 1
+		}, {
+			"value": 1,
+			"qty": 6
+		}, {
+			"value": 2,
+			"qty": 5
+		}, {
+			"value": 3,
+			"qty": 3
+		}, {
+			"value": 4,
+			"qty": 3
+		}, {
+			"value": 5,
+			"qty": 2
+		}],
+		"property": {
+			"regular": [{
+				"title": "Short Line",
+				"color": "#000000",
+				"rank": 28,
+				"money": 2,
+				"rents": [1, 2, 3, 4],
+				"qty": 1
+			}, {
+				"title": "B & O Railroad",
+				"color": "#000000",
+				"rank": 27,
+				"money": 2,
+				"rents": [1, 2, 3, 4],
+				"qty": 1
+			}, {
+				"title": "Reading Railroad",
+				"color": "#000000",
+				"rank": 26,
+				"money": 2,
+				"rents": [1, 2, 3, 4],
+				"qty": 1
+			}, {
+				"title": "Pennsylvania Railroad",
+				"color": "#000000",
+				"rank": 25,
+				"money": 2,
+				"rents": [1, 2, 3, 4],
+				"qty": 1
+			}, {
+				"title": "Electric Company",
+				"color": "#a8bbb1",
+				"rank": 24,
+				"money": 2,
+				"rents": [1, 2],
+				"qty": 1
+			}, {
+				"title": "Water Works",
+				"color": "#a8bbb1",
+				"rank": 23,
+				"money": 2,
+				"rents": [1, 2],
+				"qty": 1
+			}, {
+				"title": "Mediterranean Avenue",
+				"color": "#955438",
+				"rank": 22,
+				"money": 1,
+				"rents": [1, 2],
+				"qty": 1
+			}, {
+				"title": "Baltic Avenue",
+				"color": "#955438",
+				"rank": 21,
+				"money": 1,
+				"rents": [1, 2],
+				"qty": 1
+			}, {
+				"title": "Oriental Avenue",
+				"color": "#aae0fa",
+				"rank": 20,
+				"money": 1,
+				"rents": [1, 2, 3],
+				"qty": 1
+			}, {
+				"title": "Vermont Avenue",
+				"color": "#aae0fa",
+				"rank": 19,
+				"money": 1,
+				"rents": [1, 2, 3],
+				"qty": 1
+			}, {
+				"title": "Connecticut Avenue",
+				"color": "#aae0fa",
+				"rank": 18,
+				"money": 1,
+				"rents": [1, 2, 3],
+				"qty": 1
+			}, {
+				"title": "St. Charles Place",
+				"color": "#d93a96",
+				"rank": 17,
+				"money": 2,
+				"rents": [1, 2, 4],
+				"qty": 1
+			}, {
+				"title": "States Avenue",
+				"color": "#d93a96",
+				"rank": 16,
+				"money": 2,
+				"rents": [1, 2, 4],
+				"qty": 1
+			}, {
+				"title": "Virginia Avenue",
+				"color": "#d93a96",
+				"rank": 15,
+				"money": 2,
+				"rents": [1, 2, 4],
+				"qty": 1
+			}, {
+				"title": "St. James Place",
+				"color": "#f7941d",
+				"rank": 14,
+				"money": 2,
+				"rents": [1, 3, 5],
+				"qty": 1
+			}, {
+				"title": "Tennessee Avenue",
+				"color": "#f7941d",
+				"rank": 13,
+				"money": 2,
+				"rents": [1, 3, 5],
+				"qty": 1
+			}, {
+				"title": "New York Avenue",
+				"color": "#f7941d",
+				"rank": 12,
+				"money": 2,
+				"rents": [1, 3, 5],
+				"qty": 1
+			}, {
+				"title": "Kentucky Avenue",
+				"color": "#ed1b24",
+				"rank": 11,
+				"money": 3,
+				"rents": [2, 3, 6],
+				"qty": 1
+			}, {
+				"title": "Indiana Avenue",
+				"color": "#ed1b24",
+				"rank": 10,
+				"money": 3,
+				"rents": [2, 3, 6],
+				"qty": 1
+			}, {
+				"title": "Illnois Avenue",
+				"color": "#ed1b24",
+				"rank": 9,
+				"money": 3,
+				"rents": [2, 3, 6],
+				"qty": 1
+			}, {
+				"title": "Atlantic Avenue",
+				"color": "#fef200",
+				"rank": 8,
+				"money": 3,
+				"rents": [2, 4, 6],
+				"qty": 1
+			}, {
+				"title": "Ventura Avenue",
+				"color": "#fef200",
+				"rank": 7,
+				"money": 3,
+				"rents": [2, 4, 6],
+				"qty": 1
+			}, {
+				"title": "Marvin Gardens",
+				"color": "#fef200",
+				"rank": 6,
+				"money": 3,
+				"rents": [2, 4, 6],
+				"qty": 1
+			}, {
+				"title": "Pacific Avenue",
+				"color": "#1fb25a",
+				"rank": 5,
+				"money": 4,
+				"rents": [2, 4, 7],
+				"qty": 1
+			}, {
+				"title": "North Carolina Avenue",
+				"color": "#1fb25a",
+				"rank": 4,
+				"money": 4,
+				"rents": [2, 4, 7],
+				"qty": 1
+			}, {
+				"title": "Pennsylvania Avenue",
+				"color": "#1fb25a",
+				"rank": 3,
+				"money": 4,
+				"rents": [2, 4, 7],
+				"qty": 1
+			}, {
+				"title": "Park Place",
+				"color": "#0072bb",
+				"rank": 2,
+				"money": 4,
+				"rents": [3, 8],
+				"qty": 1
+			}, {
+				"title": "Boardwalk",
+				"color": "#0072bb",
+				"rank": 1,
+				"money": 4,
+				"rents": [3, 8],
+				"qty": 1
+			}],
+			"wild": [{
+				"title": "Dark Blue-Green Wild Card",
+				"colors": ["#0072bb", "#1fb25a"],
+				"money": 4,
+				"rents": [
+					[3, 8],
+					[2, 4, 7]
+				],
+				"qty": 1
+			}, {
+				"title": "Brown-Light Blue Wild Card",
+				"colors": ["#955438", "#aae0fa"],
+				"money": 1,
+				"rents": [
+					[1, 2],
+					[1, 2, 3]
+				],
+				"qty": 1
+			}, {
+				"title": "Orange-Purple Wild Card",
+				"colors": ["#f7941d", "#d93a96"],
+				"money": 2,
+				"rents": [
+					[1, 3, 5],
+					[1, 2, 4]
+				],
+				"qty": 2
+			}, {
+				"title": "Green-Black Wild Card",
+				"colors": ["#f7941d", "#000000"],
+				"money": 4,
+				"rents": [
+					[2, 4, 7],
+					[1, 2, 3, 4]
+				],
+				"qty": 1
+			}, {
+				"title": "Light Blue-Black Wild Card",
+				"colors": ["#aae0fa", "#000000"],
+				"money": 4,
+				"rents": [
+					[1, 2, 3],
+					[1, 2, 3, 4]
+				],
+				"qty": 1
+			}, {
+				"title": "White-Black Wild Card",
+				"colors": ["#a8bbb1", "#d93a96"],
+				"money": 2,
+				"rents": [
+					[1, 2],
+					[1, 2, 3, 4]
+				],
+				"qty": 1
+			}, {
+				"title": "Yellow-Red Wild Card",
+				"colors": ["#fef200", "#ed1b24"],
+				"money": 3,
+				"rents": [
+					[2, 4, 6],
+					[2, 3, 6]
+				],
+				"qty": 2
+			}, {
+				"title": "Wild Card",
+				"colors": ["#ffffff"],
+				"money": -1,
+				"rents": [-1],
+				"qty": 2
+			}]
+		}
+	}
+}
