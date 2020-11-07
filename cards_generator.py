@@ -5,10 +5,10 @@ import yaml, json, math, cairo
 with open('db/default.yaml','r') as db:
     cards_db = yaml.safe_load(db)
 
-# Write the cards database to JSON
-f = open('db/default.json','w')
-f.write(json.dumps(cards_db))
-f.close()
+    # Write the cards database to JSON
+    f = open('db/default.json','w')
+    f.write(json.dumps(cards_db))
+    f.close()
 
 property_regular = cards_db['cards']['property']['regular']
 property_wild = cards_db['cards']['property']['wild']
