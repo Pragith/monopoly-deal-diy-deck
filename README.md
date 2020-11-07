@@ -3,6 +3,10 @@ Create your own themed deck.
 
 # links
 1. http://monopolydealrules.com/index.php?page=cards
+2. https://www.unitconverters.net/typography/millimeter-to-pixel-x.htm
+
+# card-size
+1. MTG Card Size - 63x88 mm | 2.5x3.5 inches | 238x332
 
 # card-list
 1. Action cards:
