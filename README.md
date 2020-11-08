@@ -8,6 +8,12 @@ Create your own themed deck.
 # card-size
 1. MTG Card Size - 63x88 mm | 2.5x3.5 inches | 238x332
 
+# input
+* Chosen files inside 'templates' directory
+
+# output
+* Finished decks are exported to 'decks' directory
+
 # card-list
 1. Action cards:
  * 34 Action cards: 2 Deal Breaker, 3 Just Say No, 3 Sly Deal , 4 Force Deal, 3 Debt Collector, 3 It’s My Birthday, 10 Pass Go, 3 House, 3 Hotel, and 2 Double The Rent Cards. 

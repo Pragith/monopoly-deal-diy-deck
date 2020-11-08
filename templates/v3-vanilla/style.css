@@ -1,0 +1,271 @@
+.card {
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+  font-size: 12px;
+  background-color: white;
+  color: black;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* box-shadow: 2px 2px 4px #ccc; */
+  /* aspect ratio (56mm:87mm): 2:3 */
+  width: 200px;
+  height: 333px;
+  margin: 5px !important;
+  padding: 0;
+}
+.card .card-inner {
+  border: 1px solid #000;
+  margin: 4%;
+  padding: 4%;
+  height: 88%;
+  position: relative;
+}
+/*
+.card.small {
+  font-size: 10px;
+  border-radius: 4px;
+  width: 100px;
+  height: 150px;
+  padding: 2px;
+}
+.card.small .card-inner {
+  margin: 2%;
+  padding: 2%;
+  height: 92%;
+}
+*/
+
+.card .title {
+  display: block;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  padding: 0;
+  height: 4.25em;
+  margin-top: 5px;
+}
+.card .title > div {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.card .title > div > div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.card .title > div > div > div {
+  margin: 0 auto;
+  max-width: 10em;
+  width: 10em;
+}
+
+.card .bank-value {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  border: 3px double #000;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  vertical-align: middle;
+  background-color: white;
+}
+.card .money {
+  display: inline-block;
+  border-radius: 50%;
+  border: 5px double #888;
+  font-size: 2em;
+  width: 4em;
+  height: 4em;
+  line-height: 4em
+}
+.card .bank-value.bottom {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 1%;
+  right: 1%;
+}
+.card .bank-value .bank-value-inner {
+  margin: 0.75em 0;
+}
+.card .currency, .card .currency {
+  text-decoration: none;
+  position: relative;
+}
+.card .currency:before, .card .currency:before {
+  content: 'M';
+}
+.card .currency:after, .card .currency:after {
+  content: ' ';
+  font-size: inherit;
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 40%;
+  bottom: 40%;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.card .amount {
+  font-size: 1.5em;
+}
+.card .rent-rate .amount {
+  font-size: 1.8em;
+}
+.card .amount:after, .card .amount:after {
+  content: 'M';
+  font-size: 0.4em;
+  color: #333;
+  font-weight: lighter;
+}
+
+.card .help-text {
+  font-size: 0.75em;
+}
+
+.card table.rent-rate {
+  border: 0 none;
+  border-spacing: 0;
+  border-collapse: collapse;
+  position: relative;
+  table-layout: fixed;
+  margin-top: 1em;
+}
+
+.card table.rent-rate tr.header-row {
+  vertical-align: bottom;
+}
+
+.card table.rent-rate tr.header-row td {
+  text-align: center;
+}
+
+.card table.rent-rate tr.header-row td.help-heading {
+  font-size: 0.75em;
+  width: 50%;
+  line-height: 1em;
+}
+
+.card table.rent-rate tr.header-row td.rent-heading {
+  font-size: 1.4em;
+  width: 36%;
+  line-height: 1em;
+}
+
+.card table.rent-rate tr td.set-count {
+  width: 30%;
+  text-align: right;
+  padding: 0.5em 0.25em;
+}
+.card table.rent-rate tr td.set-count .set-count-inner {
+  position: relative;
+  height: 3em;
+  margin: 0;
+}
+.card table.rent-rate tr td.set-count .set-count-inner .set-count-card {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  width: 2em;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 0;
+  overflow: hidden;
+}
+.card table.rent-rate tr td.set-count .set-count-inner .set-count-card-1 {
+  z-index: 1;
+  right: 0.75em;
+  transform: rotate(-40deg);
+  -webkit-transform: rotate(-40deg);
+  transform-origin: 45% 50%;
+  -webkit-transform-origin: 45% 50%;
+}
+.card table.rent-rate tr td.set-count .set-count-inner .set-count-card-2 {
+  z-index: 2;
+  right: 0.5em;
+  transform: rotate(-15deg);
+  -webkit-transform: rotate(-15deg);
+  transform-origin: 30% 40%;
+  -webkit-transform-origin: 30% 40%;
+}
+.card table.rent-rate tr td.set-count .set-count-inner .set-count-card-3 {
+  z-index: 3;
+  right: 0;
+}
+.card table.rent-rate tr td.set-count .set-count-inner .set-count-card-top {
+  background-color: #4E86DF;
+  height: 0.75em;
+  margin: 0;
+}
+.card table.rent-rate tr td.set-count .set-count-inner .set-count-card-content {
+  line-height: 1.5em;
+  font-size: 1.2em;
+  background-color: white;
+  border-radius: 0 0 4px 4px;
+  margin: 0;
+}
+
+.card table.rent-rate tr td.filler {
+}
+.card table.rent-rate tr td.filler div {
+  margin: 0;
+}
+.card table.rent-rate tr td.filler > div {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.card table.rent-rate tr td.filler > div > div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.card table.rent-rate tr td.filler > div > div {
+  width: 100%;
+  border-bottom: 1px dotted #333;
+}
+.card table.rent-rate tr td.rent-rate {
+  width: 25%;
+  text-align: right;
+  padding: 0 1em 0 0.25em;
+}
+.card table.rent-rate tr td.rent-rate div {
+  margin: 0;
+}
+.card table.rent-rate tr td.full-set {
+}
+.card table.rent-rate tr td.full-set > div {
+  position: absolute;
+  bottom: 1.8em;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+.card table.rent-rate tr td.full-set > div > span {
+  background-color: rgba(255, 255, 255, 0.75);
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.rotate-90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  writing-mode: lr-tb;
+}
+
+.rotate-270 {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+  writing-mode: lr-tb;
+}
