@@ -276,14 +276,14 @@ cards:
         money: 4
         rents: [2, 4, 7]
         qty: 1
-      - title: Winterfell
+      - title: Dragonstone
         color: "#1fb25a"
         img: ""
         rank: 3
         money: 4
         rents: [2, 4, 7]
         qty: 1
-      - title: Dragonstone
+      - title: Winterfell
         color: "#0072bb"
         img: ""
         rank: 2
@@ -298,51 +298,51 @@ cards:
         rents: [3, 8]
         qty: 1
     wild:
-      - title: Dark Blue-Green Wild Card
+      - title: Dark Blue-Green
         colors: ["#0072bb", "#1fb25a"]
         img: ""
         money: 4
         rents: [[3, 8], [2, 4, 7]]
         qty: 1
-      - title: Brown-Light Blue Wild Card
+      - title: Brown-Light Blue
         colors: ["#955438", "#aae0fa"]
         img: ""
         money: 1
         rents: [[1, 2], [1, 2, 3]]
         qty: 1
-      - title: Orange-Purple Wild Card
+      - title: Orange-Purple
         colors: ["#f7941d", "#d93a96"]
         img: ""
         money: 2
         rents: [[1, 3, 5], [1, 2, 4]]
         qty: 2
-      - title: Green-Black Wild Card
+      - title: Green-Black
         colors: ["#f7941d", "#000000"]
         img: ""
         money: 4
         rents: [[2, 4, 7], [1, 2, 3, 4]]
         qty: 1
-      - title: Light Blue-Black Wild Card
+      - title: Light Blue-Black
         colors: ["#aae0fa", "#000000"]
         img: ""
         money: 4
         rents: [[1, 2, 3], [1, 2, 3, 4]]
         qty: 1
-      - title: White-Black Wild Card
+      - title: White-Black
         colors: ["#a8bbb1", "#d93a96"]
         img: ""
         money: 2
         rents: [[1, 2], [1, 2, 3, 4]]
         qty: 1
-      - title: Yellow-Red Wild Card      
+      - title: Yellow-Red      
         colors: ["#fef200", "#ed1b24"]
         img: ""
         money: 3
         rents: [[2, 4, 6], [2, 3, 6]]
         qty: 2
-      - title: Wild Card
-        colors: ["#ffffff"]
+      - title: Wild-Card
+        colors: ["#ff2222","#ff2222"]
         img: ""
         money: -1
-        rents: [-1]
+        rents: [[-1],[-1]]
         qty: 2

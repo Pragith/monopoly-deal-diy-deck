@@ -46,6 +46,22 @@
   height: 4.25em;
   margin-top: 5px;
 }
+.card .title-flipped {
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  transform:rotate(180deg);
+  display: block;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  padding: 0;
+  height: 4.25em;
+  margin-top: 5px;
+}
 .card .title > div {
   display: table;
   height: 100%;
@@ -130,6 +146,20 @@
 }
 
 .card table.rent-rate {
+  border: 0 none;
+  border-spacing: 0;
+  border-collapse: collapse;
+  position: relative;
+  table-layout: fixed;
+  margin-top: 1em;
+}
+
+.card table.rent-rate-flipped {
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  transform:rotate(180deg);
   border: 0 none;
   border-spacing: 0;
   border-collapse: collapse;

@@ -35,7 +35,7 @@ cards:
       money: 5
       qty: 2
       img: ""
-    - title: Debt Collector
+    - title: Dothraki Tribute
       description: Force any player to pay you $5M
       money: 3
       qty: 3
@@ -101,196 +101,196 @@ cards:
       img: ""
   property:
     regular:
-      - title: Short Line
+      - title: The Many-Faced God
         color: "#323332"
         img: ""
         rank: 28
         money: 2
         rents: [1, 2, 3, 4]
         qty: 1
-      - title: B & O Railroad
+      - title: The Lord of Light
         color: "#323332"
         img: ""
         rank: 27
         money: 2
         rents: [1, 2, 3, 4]
         qty: 1
-      - title: Reading Railroad
+      - title: The Seven
         color: "#323332"
         img: ""
         rank: 26
         money: 2
         rents: [1, 2, 3, 4]
         qty: 1
-      - title: Pennsylvania Railroad
+      - title: The Old Gods
         color: "#323332"
         img: ""
         rank: 25
         money: 2
         rents: [1, 2, 3, 4]
         qty: 1
-      - title: Electric Company
+      - title: The Citadel of Maestors
         color: "#a8bbb1"
         img: ""
         rank: 24
         money: 2
         rents: [1, 2]
         qty: 1
-      - title: Water Works
+      - title: Castle Black
         color: "#a8bbb1"
         img: ""
         rank: 23
         money: 2
         rents: [1, 2]
         qty: 1
-      - title: Mediterranean Avenue
+      - title: Hardhome
         color: "#955438"
         img: ""
         rank: 22
         money: 1
         rents: [1, 2]
         qty: 1
-      - title: Baltic Avenue
+      - title: The Cave of the Three-Eyed Raven
         color: "#955438"
         img: ""
         rank: 21
         money: 1
         rents: [1, 2]
         qty: 1
-      - title: Oriental Avenue
+      - title: Yunkai
         color: "#aae0fa"
         img: ""
         rank: 20
         money: 1
         rents: [1, 2, 3]
         qty: 1
-      - title: Vermont Avenue
+      - title: Astapor
         color: "#aae0fa"
         img: ""
         rank: 19
         money: 1
         rents: [1, 2, 3]
         qty: 1
-      - title: Connecticut Avenue
+      - title: Meereen
         color: "#aae0fa"
         img: ""
         rank: 18
         money: 1
         rents: [1, 2, 3]
         qty: 1
-      - title: St. Charles Place
+      - title: Horn Hill
         color: "#d93a96"
         img: ""
         rank: 17
         money: 2
         rents: [1, 2, 4]
         qty: 1
-      - title: States Avenue
+      - title: Oldtown
         color: "#d93a96"
         img: ""
         rank: 16
         money: 2
         rents: [1, 2, 4]
         qty: 1
-      - title: Virginia Avenue
+      - title: Highgarden
         color: "#d93a96"
         img: ""
         rank: 15
         money: 2
         rents: [1, 2, 4]
         qty: 1
-      - title: St. James Place
+      - title: Tower of Joy
         color: "#f7941d"
         img: ""
         rank: 14
         money: 2
         rents: [1, 3, 5]
         qty: 1
-      - title: Tennessee Avenue
+      - title: The Water Gardens
         color: "#f7941d"
         img: ""
         rank: 13
         money: 2
         rents: [1, 3, 5]
         qty: 1
-      - title: New York Avenue
+      - title: Sunspear
         color: "#f7941d"
         img: ""
         rank: 12
         money: 2
         rents: [1, 3, 5]
         qty: 1
-      - title: Kentucky Avenue
+      - title: The Twins
         color: "#ed1b24"
         img: ""
         rank: 11
         money: 3
         rents: [2, 3, 6]
         qty: 1
-      - title: Indiana Avenue
+      - title: Harrenhal
         color: "#ed1b24"
         img: ""
         rank: 10
         money: 3
         rents: [2, 3, 6]
         qty: 1
-      - title: Illnois Avenue
+      - title: Riverrun
         color: "#ed1b24"
         img: ""
         rank: 9
         money: 3
         rents: [2, 3, 6]
         qty: 1
-      - title: Atlantic Avenue
+      - title: Pyke
         color: "#fef200"
         img: ""
         rank: 8
         money: 3
         rents: [2, 4, 6]
         qty: 1
-      - title: Ventura Avenue
+      - title: The Eyrie
         color: "#fef200"
         img: ""
         rank: 7
         money: 3
         rents: [2, 4, 6]
         qty: 1
-      - title: Marvin Gardens
+      - title: Casterly Rock
         color: "#fef200"
         img: ""
         rank: 6
         money: 3
         rents: [2, 4, 6]
         qty: 1
-      - title: Pacific Avenue
+      - title: Bear Island
         color: "#1fb25a"
         img: ""
         rank: 5
         money: 4
         rents: [2, 4, 7]
         qty: 1
-      - title: North Carolina Avenue
+      - title: Moat Cailin
         color: "#1fb25a"
         img: ""
         rank: 4
         money: 4
         rents: [2, 4, 7]
         qty: 1
-      - title: Pennsylvania Avenue
+      - title: Dragonstone
         color: "#1fb25a"
         img: ""
         rank: 3
         money: 4
         rents: [2, 4, 7]
         qty: 1
-      - title: Park Place
+      - title: Winterfell
         color: "#0072bb"
         img: ""
         rank: 2
         money: 4
         rents: [3, 8]
         qty: 1
-      - title: Boardwalk
+      - title: King's Landing
         color: "#0072bb"
         img: ""
         rank: 1
@@ -298,43 +298,43 @@ cards:
         rents: [3, 8]
         qty: 1
     wild:
-      - title: Dark Blue-Green
+      - title: Dark Blue-Green Wild Card
         colors: ["#0072bb", "#1fb25a"]
         img: ""
         money: 4
         rents: [[3, 8], [2, 4, 7]]
         qty: 1
-      - title: Brown-Light Blue
+      - title: Brown-Light Blue Wild Card
         colors: ["#955438", "#aae0fa"]
         img: ""
         money: 1
         rents: [[1, 2], [1, 2, 3]]
         qty: 1
-      - title: Orange-Purple
+      - title: Orange-Purple Wild Card
         colors: ["#f7941d", "#d93a96"]
         img: ""
         money: 2
         rents: [[1, 3, 5], [1, 2, 4]]
         qty: 2
-      - title: Green-Black
+      - title: Green-Black Wild Card
         colors: ["#f7941d", "#000000"]
         img: ""
         money: 4
         rents: [[2, 4, 7], [1, 2, 3, 4]]
         qty: 1
-      - title: Light Blue-Black
+      - title: Light Blue-Black Wild Card
         colors: ["#aae0fa", "#000000"]
         img: ""
         money: 4
         rents: [[1, 2, 3], [1, 2, 3, 4]]
         qty: 1
-      - title: White-Black
+      - title: White-Black Wild Card
         colors: ["#a8bbb1", "#d93a96"]
         img: ""
         money: 2
         rents: [[1, 2], [1, 2, 3, 4]]
         qty: 1
-      - title: Yellow-Red      
+      - title: Yellow-Red Wild Card      
         colors: ["#fef200", "#ed1b24"]
         img: ""
         money: 3

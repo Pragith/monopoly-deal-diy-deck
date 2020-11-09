@@ -70,7 +70,7 @@ for card in money:
         card_money = t_money.replace('MARKER_VALUE', str(card['value']))
         cards_money.append(card_money)
 
-all_cards.append(''.join(cards_money))
+
 
 ## TEMPLATE - ACTION
 cards_action = []
@@ -82,7 +82,7 @@ for card in action:
         card_action = t_action.replace('MARKER_MONEY', str(card['money'])).replace('MARKER_DESCRIPTION', card['description']).replace('MARKER_TITLE', card['title'])
         cards_action.append(card_action)
 
-all_cards.append(''.join(cards_action))
+
 
 ## TEMPLATE - PROPERTY - REGULAR
 cards_property_r = []
@@ -114,11 +114,53 @@ for card in property_regular:
         card_property_r = t_property_r.replace('MARKER_RENT_ROW', card_rent_rows).replace('MARKER_MONEY', str(card['money'])).replace('MARKER_TITLE', card['title']).replace('MARKER_COLOR', card['color'])
         cards_property_r.append(card_property_r)
 
-all_cards.append(''.join(cards_property_r))
+## TEMPLATE - PROPERTY - WILD
+cards_property_w = []
+
+for card in property_wild:
+    for qty in range(card['qty']):
+        with open('templates/v3-vanilla/template-property-wild.html', 'r') as file:
+            t_property_w = file.read()
+        
+        t_property_w = t_property_w.replace('MARKER_MONEY', str(card['money']))
+        for wild_row_set, card_rents in enumerate(card['rents']):
+            card_property_w = ''
+            card_rent_rows = ''
+            rent_index = 1
+            for rent in card_rents:
+                card_rent_row = ''
+                rent_css_index = len(card_rents)        
+                with open('templates/v3-vanilla/template-property-rent-row.html', 'r') as file:
+                    t_rent_row = file.read()
+                    card_rent_row = t_rent_row.replace('MARKER_RENT_AMOUNT', str(rent))
+                    card_rent_set = []
+                    with open('templates/v3-vanilla/template-property-rent-card-set.html', 'r') as file:
+                        t_rent_set = file.read()
+                        rent_card_index = 1                    
+                        for rent_i in range(rent_index):  
+                            card_rent_set.append(t_rent_set.replace('MARKER_CARD_DISPLAY_INDEX', str(rent_index)).replace('MARKER_CARD_CSS_INDEX', str(rent_css_index)))
+                            rent_css_index -= 1                        
+                    card_rent_set.reverse()
+                    card_rent_set = ''.join(card_rent_set)
+                    card_rent_row = card_rent_row.replace('MARKER_RENT_CARD_SET', card_rent_set)
+                card_rent_rows += card_rent_row
+                rent_index += 1
+
+                print(f'wild_row_set, {wild_row_set}, {wild_row_set + 1}')
+
+            card_property_w += t_property_w.replace(f'MARKER_RENT_ROW_{wild_row_set + 1}', card_rent_rows).replace(f'MARKER_COLOR_{wild_row_set + 1}', card['colors'][wild_row_set]).replace(f'MARKER_TITLE_{wild_row_set + 1}', card['title'].split('-')[wild_row_set])
+                
+            cards_property_w.append(card_property_w)
 
 
 
 # Update the main template
+
+# all_cards.append(''.join(cards_action))
+# all_cards.append(''.join(cards_money))
+# all_cards.append(''.join(cards_property_r))
+all_cards.append(''.join(cards_property_w))
+
 MARKER_CARDS = ''
 for card in all_cards:
     MARKER_CARDS += ''.join(card)
