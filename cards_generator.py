@@ -1,12 +1,28 @@
 #%%
-import yaml, json, math, cairo
+import yaml, json
+
+## FUNCTIONS
+def update_main_template(MARKER_CARDS):
+    ## TEMPLATE - MAIN
+    with open('templates/v3-vanilla/template-index.html', 'r') as file:
+        t_index = file.read()
+
+    with open('templates/v3-vanilla/index.html', 'w') as file:
+        file.write(t_index.replace('MARKER_CARDS', MARKER_CARDS))
+
+
+## EXECUTION
+
+# Read the project configuration
+with open('config/card.yaml','r') as cnf:
+    config = yaml.safe_load(cnf)
 
 # Read the cards database
-with open('db/default.yaml','r') as db:
+with open(f'db/{config["db"]}.yaml','r') as db:
     cards_db = yaml.safe_load(db)
 
     # Write the cards database to JSON
-    f = open('db/default.json','w')
+    f = open(f'db/{config["db"]}.json','w')
     f.write(json.dumps(cards_db))
     f.close()
 
@@ -39,148 +55,76 @@ for card in money:
     total_cards += card['qty']
 print(f'> Total cards in the database: {total_cards}')
 
-# %%
-# Create & Draw on the template
 
-# Read the card template:
-with open('config/card.yaml','r') as db:
-    card_template = yaml.safe_load(db)
-height_mm = card_template['height_mm']
-width_mm = card_template['width_mm']
-dpi = card_template['dpi']
-cards_per_page = card_template['cards_per_page']
+# Create cards & Draw on the template
+all_cards = []
 
-WIDTH, HEIGHT = int((dpi*width_mm)/(25.44*cards_per_page)), int((dpi*height_mm)/(25.44*cards_per_page))
-surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, WIDTH, HEIGHT)
-context = cairo.Context(surface)
 
-def draw_1(ctx, width, height):
-    ctx.scale(WIDTH, HEIGHT)  # Normalizing the canvas
+## TEMPLATE - MONEY
+cards_money = []
+with open('templates/v3-vanilla/template-money.html', 'r') as file:
+    t_money = file.read()
 
-    pat = cairo.LinearGradient(0.0, 0.0, 0.0, 1.0)
-    pat.add_color_stop_rgba(1, 0.7, 0, 0, 0.5)  # First stop, 50% opacity
-    pat.add_color_stop_rgba(0, 0.9, 0.7, 0.2, 1)  # Last stop, 100% opacity
+for card in money:
+    for qty in range(card['qty']):
+        card_money = t_money.replace('MARKER_VALUE', str(card['value']))
+        cards_money.append(card_money)
 
-    ctx.rectangle(0, 0, 1, 1)  # Rectangle(x0, y0, x1, y1)
-    ctx.set_source(pat)
-    ctx.fill()
+all_cards.append(''.join(cards_money))
 
-    ctx.translate(0.1, 0.1)  # Changing the current transformation matrix
+## TEMPLATE - ACTION
+cards_action = []
+with open('templates/v3-vanilla/template-action.html', 'r') as file:
+    t_action = file.read()
 
-    ctx.move_to(0, 0)
-    # Arc(cx, cy, radius, start_angle, stop_angle)
-    ctx.arc(0.2, 0.1, 0.1, -math.pi / 2, 0)
-    ctx.line_to(0.5, 0.1)  # Line to (x,y)
-    # Curve(x1, y1, x2, y2, x3, y3)
-    ctx.curve_to(0.5, 0.2, 0.5, 0.4, 0.2, 0.8)
-    ctx.close_path()
+for card in action:
+    for qty in range(card['qty']):
+        card_action = t_action.replace('MARKER_MONEY', str(card['money'])).replace('MARKER_DESCRIPTION', card['description']).replace('MARKER_TITLE', card['title'])
+        cards_action.append(card_action)
 
-    ctx.set_source_rgb(0.3, 0.2, 0.5)  # Solid color
-    ctx.set_line_width(0.02)
-    ctx.stroke()
+all_cards.append(''.join(cards_action))
 
-def draw_2(cr, width, height):
-    cr.scale(width, height)
-    cr.set_line_width(0.4)
+## TEMPLATE - PROPERTY - REGULAR
+cards_property_r = []
+with open('templates/v3-vanilla/template-property-regular.html', 'r') as file:
+    t_property_r = file.read()
 
-    cr.select_font_face("Arial", cairo.FONT_SLANT_NORMAL,
-                        cairo.FONT_WEIGHT_BOLD)
-    cr.set_font_size(0.2)
+for card in property_regular:
+    for qty in range(card['qty']):
+        card_rent_rows = ''
+        rent_index = 1        
+        for rent in card['rents']:
+            card_rent_row = ''
+            rent_css_index = len(card['rents'])        
+            with open('templates/v3-vanilla/template-property-rent-row.html', 'r') as file:
+                t_rent_row = file.read()
+                card_rent_row = t_rent_row.replace('MARKER_RENT_AMOUNT', str(rent))
+                card_rent_set = []
+                with open('templates/v3-vanilla/template-property-rent-card-set.html', 'r') as file:
+                    t_rent_set = file.read()
+                    rent_card_index = 1                    
+                    for rent_i in range(rent_index):      
+                        card_rent_set.append(t_rent_set.replace('MARKER_CARD_DISPLAY_INDEX', str(rent_index)).replace('MARKER_CARD_CSS_INDEX', str(rent_css_index)))
+                        rent_css_index -= 1                        
+                card_rent_set.reverse()
+                card_rent_set = ''.join(card_rent_set)
+                card_rent_row = card_rent_row.replace('MARKER_RENT_CARD_SET', card_rent_set)
+            card_rent_rows += card_rent_row
+            rent_index += 1
+        card_property_r = t_property_r.replace('MARKER_RENT_ROW', card_rent_rows).replace('MARKER_MONEY', str(card['money'])).replace('MARKER_TITLE', card['title']).replace('MARKER_COLOR', card['color'])
+        cards_property_r.append(card_property_r)
 
-    cr.move_to(0.09, 0.23)
-    cr.show_text("Hello")
+all_cards.append(''.join(cards_property_r))
 
-    cr.move_to(0.27, 0.65)
-    cr.text_path("World")
-    cr.set_source_rgb(0.5, 0.5, 1)
-    cr.fill_preserve()
-    cr.set_source_rgb(0, 0, 0)
-    cr.set_line_width(0.01)
-    cr.stroke()
 
-    # draw helping lines
-    cr.set_source_rgba(1, 0.2, 0.2, 0.6)
-    cr.arc(0.04, 0.53, 0.02, 0, 2 * math.pi)
-    cr.arc(0.27, 0.65, 0.02, 0, 2 * math.pi)
-    cr.fill()
 
-def draw_3(cr, width, height):
-    cr.scale(width, height)
-    cr.set_line_width(0.04)
+# Update the main template
+MARKER_CARDS = ''
+for card in all_cards:
+    MARKER_CARDS += ''.join(card)
+update_main_template(MARKER_CARDS)
 
-    # a custom shape, that could be wrapped in a function
-    x0 = 0.1  # parameters like cairo_rectangle
-    y0 = 0.1
-    rect_width = 0.8
-    rect_height = 0.8
-    radius = 0.4  # and an approximate curvature radius
 
-    x1 = x0 + rect_width
-    y1 = y0 + rect_height
 
-    if rect_width / 2 < radius:
-        if rect_height / 2 < radius:
-            cr.move_to(x0, (y0 + y1) / 2)
-            cr.curve_to(x0, y0, x0, y0, (x0 + x1) / 2, y0)
-            cr.curve_to(x1, y0, x1, y0, x1, (y0 + y1) / 2)
-            cr.curve_to(x1, y1, x1, y1, (x1 + x0) / 2, y1)
-            cr.curve_to(x0, y1, x0, y1, x0, (y0 + y1) / 2)
-        else:
-            cr.move_to(x0, y0 + radius)
-            cr.curve_to(x0, y0, x0, y0, (x0 + x1) / 2, y0)
-            cr.curve_to(x1, y0, x1, y0, x1, y0 + radius)
-            cr.line_to(x1, y1 - radius)
-            cr.curve_to(x1, y1, x1, y1, (x1 + x0) / 2, y1)
-            cr.curve_to(x0, y1, x0, y1, x0, y1 - radius)
-    else:
-        if rect_height / 2 < radius:
-            cr.move_to(x0, (y0 + y1) / 2)
-            cr.curve_to(x0, y0, x0, y0, x0 + radius, y0)
-            cr.line_to(x1 - radius, y0)
-            cr.curve_to(x1, y0, x1, y0, x1, (y0 + y1) / 2)
-            cr.curve_to(x1, y1, x1, y1, x1 - radius, y1)
-            cr.line_to(x0 + radius, y1)
-            cr.curve_to(x0, y1, x0, y1, x0, (y0 + y1) / 2)
-        else:
-            cr.move_to(x0, y0 + radius)
-            cr.curve_to(x0, y0, x0, y0, x0 + radius, y0)
-            cr.line_to(x1 - radius, y0)
-            cr.curve_to(x1, y0, x1, y0, x1, y0 + radius)
-            cr.line_to(x1, y1 - radius)
-            cr.curve_to(x1, y1, x1, y1, x1 - radius, y1)
-            cr.line_to(x0 + radius, y1)
-            cr.curve_to(x0, y1, x0, y1, x0, y1 - radius)
-
-    cr.close_path()
-
-    cr.set_source_rgb(0.5, 0.5, 1)
-    cr.fill_preserve()
-    cr.set_source_rgba(0.5, 0, 0, 0.5)
-    cr.stroke()
-
-def draw_rect(cr, width, height):
-    cr.scale(width, height)
-    cr.set_line_width(0.04)
-
-    cr.rectangle(0.1, 0.1, 0.6, 0.6)
-    cr.set_line_width(0.03)
-    cr.set_source_rgb(0.8, 0.8, 0.8)
-    cr.fill()
-
-    cr.push_group()
-    cr.rectangle(0.3, 0.3, 0.6, 0.6)
-    cr.set_source(cairo.SolidPattern(1, 0, 0))
-    cr.fill_preserve()
-    cr.set_source(cairo.SolidPattern(0, 0, 0))
-    cr.stroke()
-    cr.pop_group_to_source()
-    cr.paint_with_alpha(0.5)
-
-#draw_1(context, WIDTH, HEIGHT)
-#draw_2(context, WIDTH, HEIGHT)
-#draw_3(context, WIDTH, HEIGHT)
-draw_rect(context, WIDTH, HEIGHT)
-
-surface.write_to_png("decks/png/test1.png")  # Output to PNG
 # %%
 # %%
