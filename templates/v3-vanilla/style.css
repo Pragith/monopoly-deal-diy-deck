@@ -199,6 +199,14 @@
   z-index: 3;
   right: 0;
 }
+.card table.rent-rate tr td.set-count .set-count-inner .set-count-card-4 {
+  z-index: 4;
+  right: 0;
+  transform: rotate(-5deg);
+  -webkit-transform: rotate(-5deg);
+  transform-origin: 15% 30%;
+  -webkit-transform-origin: 15% 30%;
+}
 .card table.rent-rate tr td.set-count .set-count-inner .set-count-card-top {
   background-color: #4E86DF;
   height: 0.75em;
